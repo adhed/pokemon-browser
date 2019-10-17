@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+}
+
+.pokemon-details__info {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-details__name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+
+}

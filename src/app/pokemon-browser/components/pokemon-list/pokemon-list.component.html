@@ -1,0 +1,5 @@
+<app-list-pagination></app-list-pagination>
+<app-pokemon-list-element *ngFor="let pokemon of pokemons$ | async"
+  class="pokemon-list__element"
+  [pokemon]="pokemon">
+</app-pokemon-list-element>

@@ -1,0 +1,13 @@
+<ng-container *ngIf="pokemonDetails$ | async as details; else noResults">
+    <ng-container *ngIf="details.name; else noResults">
+        <img src="{{ details?.sprites?.front_default }}" alt="{{ details.name }}" />
+        <div class="pokemon-details__info">
+            <h2 class="pokemon-details__name">{{ details.name }}</h2>
+            <span>stats:</span>
+        </div>
+    </ng-container>
+</ng-container>
+
+<ng-template #noResults>
+  <span>Sorry, we cannot find Pokemon with this id.</span>
+</ng-template>

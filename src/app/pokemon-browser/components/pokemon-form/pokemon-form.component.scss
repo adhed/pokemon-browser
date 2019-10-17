@@ -1,0 +1,34 @@
+@import 'variables';
+
+.pokemon-form {
+  display: flex;
+  height: 3rem;
+}
+
+.pokemon-form__input {
+  margin-right: 1rem;
+  width: 60%;
+}
+
+.pokemon-form__button {
+  cursor: pointer;
+  margin-right: 1rem;
+  width: 30%;
+  background: $blue;
+  color: $white;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &:hover {
+    outline: none;
+    background: $pink;
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
