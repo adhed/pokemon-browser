@@ -1,13 +1,17 @@
-<ng-container *ngIf="pokemonDetails$ | async as details; else noResults">
-    <ng-container *ngIf="details.name; else noResults">
-        <img src="{{ details?.sprites?.front_default }}" alt="{{ details.name }}" />
-        <div class="pokemon-details__info">
-            <h2 class="pokemon-details__name">{{ details.name }}</h2>
-            <span>stats:</span>
-        </div>
-    </ng-container>
-</ng-container>
+
+<app-pokemon-details-nav></app-pokemon-details-nav>
+
+<div class="pokemon-details__wrapper" *ngIf="pokemonDetails$ | async as details; else noResults">
+    <img class="pokemon-details__image" src="{{ details?.sprites?.front_default }}" alt="{{ details.name }}" />
+    <div class="pokemon-details__info">
+        <h2 class="pokemon-details__name-label">Hi, my name is <span class="pokemon-details__name">{{ details.name }}</span></h2>
+        <span>stats:</span>
+    </div>
+
+   <div class="pokemon-details__loading" *ngIf="isLoading$ | async">Loading...</div>
+</div>
+
 
 <ng-template #noResults>
-  <span>Sorry, we cannot find Pokemon with this id.</span>
+  <span class="pokemon-details__no-results">Sorry, we cannot find Pokemon with this id.</span>
 </ng-template>

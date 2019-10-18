@@ -1,0 +1,20 @@
+@import 'variables';
+
+.element__link {
+  color: $dark-gray;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $dark-gray;
+  }
+}
+
+.element__point {
+  margin: 0.5rem 0;
+}

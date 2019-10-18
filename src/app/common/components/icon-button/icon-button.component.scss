@@ -1,0 +1,33 @@
+@import 'variables';
+
+:host {
+  display: flex;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: $blue;
+  color: $white;
+  border: 1px solid $dark-gray;
+  font-weight: bold;
+  text-transform: uppercase;
+  user-select: none;
+
+  &:hover {
+    background: $pink;
+  }
+}
+
+.icon-button__icon {
+  &--prefix {
+    margin-right: 0.5rem;
+    order: 0;
+  }
+
+  &--suffix {
+    margin-left: 0.5rem;
+    order: 2;
+  }
+}
+
+.icon-button__label {
+  order: 1;
+}

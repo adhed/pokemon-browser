@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonListService } from '@app/pokemon-browser/services';
+import { PaginationService } from '@app/pokemon-browser/services';
+import { BehaviorSubject } from 'rxjs';
+import { faArrowCircleLeft, faArrowCircleRight, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-list-pagination',
@@ -8,16 +10,23 @@ import { PokemonListService } from '@app/pokemon-browser/services';
 })
 export class ListPaginationComponent implements OnInit {
 
-  constructor(private readonly listService: PokemonListService) { }
+  public readonly faArrowCircleLeft: IconDefinition = faArrowCircleLeft;
+  public readonly faArrowCircleRight: IconDefinition = faArrowCircleRight;
+
+  public get currentPage$(): BehaviorSubject<number> {
+    return this.paginationService.currentPage$;
+  }
+
+  constructor(private readonly paginationService: PaginationService) { }
 
   ngOnInit() {
   }
 
   public onPrevClick(): void {
-    // this.listService.
+    this.paginationService.goToPreviousPage();
   }
 
   public onNextClick(): void {
-
+    this.paginationService.goToNextPage();
   }
 }

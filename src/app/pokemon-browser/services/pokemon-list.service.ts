@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 import { PokemonService } from '@app/pokemon-browser/services/pokemon.service';
 import { PokemonListElement, PokemonListResponse } from '@app/pokemon-browser/models';
@@ -8,20 +8,23 @@ import { PokemonListElement, PokemonListResponse } from '@app/pokemon-browser/mo
 @Injectable()
 export class PokemonListService {
 
-  public pokemons$: Observable<PokemonListElement>;
-
   private currentOffset: number = 0;
-  private readonly pageResultsLimit: number = 10;
+  private pageResultsLimit: number = 10;
 
   constructor(
     private readonly pokemonService: PokemonService
   ) {}
 
-  public getPokemons(): Observable<PokemonListElement[]> {
+  public setPageResultsLimit(limit: number): void {
+    this.pageResultsLimit = limit;
+  }
+
+  public getPokemons(page: number): Observable<PokemonListElement[]> {
     return this.pokemonService
       .getPokemonList(this.pageResultsLimit, this.currentOffset)
       .pipe(
-        map((result: PokemonListResponse) => result.results)
+        map((result: PokemonListResponse) => result.results),
+        tap(() => this.currentOffset = (page - 1) * this.pageResultsLimit),
       );
   }
 }

@@ -1,3 +1,5 @@
+@import 'variables';
+
 :host {
   display: block;
   width: 920px;
@@ -5,5 +7,7 @@
 }
 
 .pokemon-browser__results {
+  padding-top: 2rem;
+  border-top: 1px solid $light-gray;
   margin-top: 2rem;
 }

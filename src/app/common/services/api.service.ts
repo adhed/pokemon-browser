@@ -21,6 +21,6 @@ export class ApiService {
 
   private handleError(error: HttpErrorResponse): Observable<string> {
     console.log('HTTP error', error.name);
-    return of(error.message);
+    return of(null);
   }
 }

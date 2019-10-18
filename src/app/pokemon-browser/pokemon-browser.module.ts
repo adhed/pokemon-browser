@@ -11,6 +11,10 @@ import { PokemonFormComponent } from './components';
 import { PokemonService } from './services/pokemon.service';
 import { PokemonListService } from './services/pokemon-list.service';
 import { ListPaginationComponent } from './components/list-pagination/list-pagination.component';
+import { PaginationService } from './services';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IconButtonComponent } from '@app/common/components/icon-button';
+import { PokemonDetailsNavComponent } from './components/pokemon-details-nav/pokemon-details-nav.component';
 
 
 @NgModule({
@@ -21,16 +25,20 @@ import { ListPaginationComponent } from './components/list-pagination/list-pagin
     PokemonListElementComponent,
     PokemonDetailsComponent,
     ListPaginationComponent,
+    IconButtonComponent,
+    PokemonDetailsNavComponent,
   ],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [
     PokemonService,
     PokemonListService,
+    PaginationService,
   ]
 })
 export class PokemonBrowserModule { }

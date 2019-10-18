@@ -1,12 +1,15 @@
-@import 'variables';
-
 :host {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
 
-.list-pagination__current-page {
+.details-nav__label {
   padding: 0.5rem;
+  cursor: pointer;
   text-transform: uppercase;
+
+  &:hover {
+    text-decoration: underline;;
+  }
 }

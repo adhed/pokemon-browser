@@ -1,4 +1,17 @@
+@import 'variables';
+
 :host {
   display: flex;
   flex-direction: column;
+}
+
+.pokemon-list__element {
+  &--loading {
+    display: none;
+  }
+}
+
+app-list-pagination {
+  border-bottom: 1px solid $light-gray;
+  padding-bottom: 2rem;
 }

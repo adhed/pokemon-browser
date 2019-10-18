@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subject, throwError, of } from 'rxjs';
+import { Observable, Subject, of, BehaviorSubject } from 'rxjs';
 import { Pokemon } from '@app/pokemon-browser/models';
 import { ActivatedRoute, Params } from '@angular/router';
-import { switchMap, takeUntil, catchError } from 'rxjs/operators';
+import { switchMap, catchError, tap } from 'rxjs/operators';
 import { PokemonService } from '@app/pokemon-browser/services';
 
 @Component({
@@ -13,6 +13,7 @@ import { PokemonService } from '@app/pokemon-browser/services';
 export class PokemonDetailsComponent implements OnDestroy, OnInit {
 
   public pokemonDetails$: Observable<Pokemon>;
+  public isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   private readonly destroy$: Subject<void> = new Subject();
 
@@ -24,7 +25,11 @@ export class PokemonDetailsComponent implements OnDestroy, OnInit {
   public ngOnInit(): void {
     this.pokemonDetails$ = this.route.params
       .pipe(
-        switchMap((params: Params) => this.pokemonService.getPokemon(params.id)),
+        switchMap((params: Params) => {
+          this.isLoading$.next(true);
+          return this.pokemonService.getPokemon(params.id);
+        }),
+        tap(() => this.isLoading$.next(false)),
         catchError(() => of(null)),
       );
   }
