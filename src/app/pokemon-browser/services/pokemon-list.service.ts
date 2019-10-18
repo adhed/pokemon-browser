@@ -20,11 +20,12 @@ export class PokemonListService {
   }
 
   public getPokemons(page: number): Observable<PokemonListElement[]> {
+    this.currentOffset = (page - 1) * this.pageResultsLimit;
+
     return this.pokemonService
       .getPokemonList(this.pageResultsLimit, this.currentOffset)
       .pipe(
         map((result: PokemonListResponse) => result.results),
-        tap(() => this.currentOffset = (page - 1) * this.pageResultsLimit),
       );
   }
 }
