@@ -14,7 +14,7 @@ export class ListPaginationComponent implements OnInit {
   }
 
   public onPrevClick(): void {
-    this.listService.
+    // this.listService.
   }
 
   public onNextClick(): void {
