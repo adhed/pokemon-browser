@@ -11,9 +11,9 @@
   }
 }
 
-.pokemon-list__wrapper {
-  list-style-type: square;
-  padding-left: 1rem;
+.pokemon-list__list-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 app-list-pagination {

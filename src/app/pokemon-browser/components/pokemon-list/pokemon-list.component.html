@@ -1,11 +1,11 @@
 <app-list-pagination></app-list-pagination>
 
-<ul class="pokemon-list__wrapper">
+<div class="pokemon-list__list-wrapper">
     <app-pokemon-list-element *ngFor="let pokemon of pokemons$ | async"
       class="pokemon-list__element"
       [ngClass]="{'pokemon-list__element--loading': isLoading$ | async}"
       [pokemon]="pokemon">
     </app-pokemon-list-element>
-</ul>
+  </div>
 
 <span class="pokemon-list__loading" *ngIf="isLoading$ | async">The list is loading...</span>
