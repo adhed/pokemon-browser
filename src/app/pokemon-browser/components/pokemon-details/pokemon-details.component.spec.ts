@@ -6,9 +6,8 @@ import { PokemonStatsComponent } from '../pokemon-stats/pokemon-stats.component'
 import { IconButtonComponent } from '@app/common/components/icon-button';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterTestingModule } from '@angular/router/testing';
-import { PokemonService } from '@app/pokemon-browser/services';
+import { PokemonService, NavigationService } from '@app/pokemon-browser/services';
 import { ApiService, mockedApiService } from '@app/common/services';
-import { of } from 'rxjs'
 
 describe('PokemonDetailsComponent', () => {
   let component: PokemonDetailsComponent;
@@ -19,7 +18,7 @@ describe('PokemonDetailsComponent', () => {
       declarations: [
         PokemonDetailsComponent, PokemonDetailsNavComponent, PokemonStatsComponent, IconButtonComponent,
       ],
-      providers: [ PokemonService, { provide: ApiService, useValue: mockedApiService } ],
+      providers: [ PokemonService, { provide: ApiService, useValue: mockedApiService }, NavigationService ],
       imports: [ FontAwesomeModule, RouterTestingModule ],
     })
     .compileComponents();

@@ -4,6 +4,7 @@ import { PokemonBrowserComponent } from './pokemon-browser.component';
 import { PokemonFormComponent } from './components';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NavigationService } from './services';
 
 describe('PokemonBrowserComponent', () => {
   let component: PokemonBrowserComponent;
@@ -12,6 +13,7 @@ describe('PokemonBrowserComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PokemonBrowserComponent, PokemonFormComponent ],
+      providers: [ NavigationService ],
       imports: [ RouterTestingModule, ReactiveFormsModule, FormsModule ]
     })
     .compileComponents();
