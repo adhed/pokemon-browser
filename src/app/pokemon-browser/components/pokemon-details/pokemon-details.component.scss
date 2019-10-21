@@ -9,10 +9,12 @@
 .pokemon-details__wrapper {
   display: flex;
   position: relative;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pokemon-details__info {
-  margin-left: 1rem;
+  margin: 1rem 0;
   display: flex;
   flex-direction: column;
 }
@@ -37,7 +39,6 @@
   border: 2px solid $dark-gray;
   width: 100px;
   height: 100px;
-  margin-bottom: 2rem;
 }
 
 .pokemon-details__loading {

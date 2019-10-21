@@ -2,17 +2,15 @@
 <app-pokemon-details-nav></app-pokemon-details-nav>
 
 <div class="pokemon-details__wrapper" *ngIf="pokemonDetails$ | async as details; else noResults">
-  <div class="pokemon-details__left-side"></div>
-      <img class="pokemon-details__image" src="{{ details?.sprites?.front_default }}" alt="{{ details.name }}" />
-      <app-pokemon-stats [stats]="geParsedStats(details?.stats)"></app-pokemon-stats>
+  <img class="pokemon-details__image" src="{{ details?.sprites?.front_default }}" alt="{{ details.name }}" />
+
+  <div class="pokemon-details__info">
+      <h2 class="pokemon-details__name-label">Hi, my name is <span class="pokemon-details__name">{{ details.name }}</span></h2>
   </div>
 
+  <app-pokemon-stats [stats]="geParsedStats(details?.stats)"></app-pokemon-stats>
 
-    <div class="pokemon-details__info">
-        <h2 class="pokemon-details__name-label">Hi, my name is <span class="pokemon-details__name">{{ details.name }}</span></h2>
-    </div>
-
-   <div class="pokemon-details__loading" *ngIf="isLoading$ | async">Loading...</div>
+  <div class="pokemon-details__loading" *ngIf="isLoading$ | async">Loading...</div>
 </div>
 
 
