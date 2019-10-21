@@ -11,7 +11,7 @@ import { PokemonFormComponent } from './components';
 import { PokemonService } from './services/pokemon.service';
 import { PokemonListService } from './services/pokemon-list.service';
 import { ListPaginationComponent } from './components/list-pagination/list-pagination.component';
-import { PaginationService } from './services';
+import { PaginationService, NavigationService } from './services';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconButtonComponent } from '@app/common/components/icon-button';
 import { PokemonDetailsNavComponent } from './components/pokemon-details-nav/pokemon-details-nav.component';
@@ -41,6 +41,7 @@ import { PokemonStatsComponent } from './components/pokemon-stats/pokemon-stats.
     PokemonService,
     PokemonListService,
     PaginationService,
+    NavigationService,
   ]
 })
 export class PokemonBrowserModule { }
