@@ -11,6 +11,11 @@
   }
 }
 
+.pokemon-list__wrapper {
+  list-style-type: square;
+  padding-left: 1rem;
+}
+
 app-list-pagination {
   border-bottom: 1px solid $light-gray;
   padding-bottom: 2rem;

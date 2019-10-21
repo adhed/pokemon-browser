@@ -1,5 +1,5 @@
 <app-icon-button (click)="onPrevClick()" [icon]="faArrowCircleLeft" [isPrefix]="true" [text]="'previous page'"></app-icon-button>
 
-<span class="list-pagination__current-page">page: {{ currentPage$ | async }}</span>
+<span class="list-pagination__current-page">page: {{ currentPage$ | async }} / 10</span>
 
 <app-icon-button (click)="onNextClick()" [icon]="faArrowCircleRight" [isSuffix]="true" [text]="'next page'"></app-icon-button>

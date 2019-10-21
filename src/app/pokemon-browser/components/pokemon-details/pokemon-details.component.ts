@@ -4,6 +4,8 @@ import { Pokemon } from '@app/pokemon-browser/models';
 import { ActivatedRoute, Params } from '@angular/router';
 import { switchMap, catchError, tap } from 'rxjs/operators';
 import { PokemonService } from '@app/pokemon-browser/services';
+import { PokemonParsedStat, PokemonStat } from '@app/pokemon-browser/models/stats';
+import { geParsedStats } from '@app/pokemon-browser/utils/stats-utils';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -30,13 +32,20 @@ export class PokemonDetailsComponent implements OnDestroy, OnInit {
           return this.pokemonService.getPokemon(params.id);
         }),
         tap(() => this.isLoading$.next(false)),
-        catchError(() => of(null)),
+        catchError(() => {
+          console.log('error');
+          return of(null);
+        }),
       );
   }
 
   public ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  public geParsedStats(stats: PokemonStat[]): PokemonParsedStat {
+    return geParsedStats(stats);
   }
 
 }

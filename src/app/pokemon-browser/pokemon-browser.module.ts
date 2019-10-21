@@ -15,6 +15,7 @@ import { PaginationService } from './services';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconButtonComponent } from '@app/common/components/icon-button';
 import { PokemonDetailsNavComponent } from './components/pokemon-details-nav/pokemon-details-nav.component';
+import { PokemonStatsComponent } from './components/pokemon-stats/pokemon-stats.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { PokemonDetailsNavComponent } from './components/pokemon-details-nav/pok
     ListPaginationComponent,
     IconButtonComponent,
     PokemonDetailsNavComponent,
+    PokemonStatsComponent,
   ],
   imports: [
     RouterModule.forChild(routes),

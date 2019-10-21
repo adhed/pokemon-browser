@@ -1,0 +1,33 @@
+@import 'variables';
+
+:host {
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $dark-gray;
+  min-width: 200px;
+}
+
+.pokemon-stats__value {
+  margin-left: auto;
+}
+
+.pokemon-stats__label {
+  display: flex;
+  flex: 1;
+}
+
+.pokemon-stats__wrapper {
+  display: flex;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.5rem;
+
+  &:hover {
+    background: $light-gray;
+    color: $white;
+  }
+}
+
+.pokemon-stats__icon {
+  margin-right: 0.5rem;
+}

@@ -30,11 +30,13 @@
 }
 
 .pokemon-details__image {
+  align-self: center;
   background-color: $light-gray;
   border-radius: 50%;
   border: 2px solid $dark-gray;
   width: 100px;
   height: 100px;
+  margin-bottom: 1rem;
 }
 
 .pokemon-details__loading {
@@ -44,6 +46,11 @@
   top: -1rem;
   background: $white;
   position: absolute;
+}
+
+.pokemon-details__left-side {
+  display: flex;
+  flex-direction: column;
 }
 
 app-pokemon-details-nav {
