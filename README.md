@@ -17,4 +17,4 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## DEMO
 
-https://adhed.github.io/pokemon-browser/dist/pokemon-browser/pokemon-browser/
+https://adhed.github.io/pokemon-browser/dist/pokemon-browser/
