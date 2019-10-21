@@ -15831,6 +15831,7 @@ PokemonBrowserModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _services_pokemon_service__WEBPACK_IMPORTED_MODULE_11__["PokemonService"],
             _services_pokemon_list_service__WEBPACK_IMPORTED_MODULE_12__["PokemonListService"],
             _services__WEBPACK_IMPORTED_MODULE_14__["PaginationService"],
+            _services__WEBPACK_IMPORTED_MODULE_14__["NavigationService"],
         ]
     })
 ], PokemonBrowserModule);
