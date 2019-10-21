@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faArrowCircleLeft, faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { Router, ActivatedRoute, Params } from '@angular/router';
@@ -6,7 +6,8 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 @Component({
   selector: 'app-pokemon-details-nav',
   templateUrl: './pokemon-details-nav.component.html',
-  styleUrls: ['./pokemon-details-nav.component.scss']
+  styleUrls: ['./pokemon-details-nav.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PokemonDetailsNavComponent implements OnInit {
   public readonly faArrowCircleLeft: IconDefinition = faArrowCircleLeft;

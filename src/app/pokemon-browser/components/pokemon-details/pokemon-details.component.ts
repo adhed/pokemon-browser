@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Observable, Subject, of, BehaviorSubject } from 'rxjs';
 import { Pokemon } from '@app/pokemon-browser/models';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -10,7 +10,8 @@ import { geParsedStats } from '@app/pokemon-browser/utils/stats-utils';
 @Component({
   selector: 'app-pokemon-details',
   templateUrl: './pokemon-details.component.html',
-  styleUrls: ['./pokemon-details.component.scss']
+  styleUrls: ['./pokemon-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PokemonDetailsComponent implements OnDestroy, OnInit {
 
@@ -47,5 +48,4 @@ export class PokemonDetailsComponent implements OnDestroy, OnInit {
   public geParsedStats(stats: PokemonStat[]): PokemonParsedStat {
     return geParsedStats(stats);
   }
-
 }

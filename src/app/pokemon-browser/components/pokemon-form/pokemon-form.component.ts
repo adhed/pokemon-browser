@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, ValidationErrors } from '@angular/forms';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-form',
   templateUrl: './pokemon-form.component.html',
-  styleUrls: ['./pokemon-form.component.scss']
+  styleUrls: ['./pokemon-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PokemonFormComponent implements OnInit {
+export class PokemonFormComponent {
 
   public pokemonId: FormControl = new FormControl(null, [Validators.required]);
 
@@ -18,10 +19,6 @@ export class PokemonFormComponent implements OnInit {
   constructor(
     private readonly router: Router
   ) { }
-
-  public ngOnInit(): void {
-
-  }
 
   public onButtonClick(event: MouseEvent): void {
     event.preventDefault();

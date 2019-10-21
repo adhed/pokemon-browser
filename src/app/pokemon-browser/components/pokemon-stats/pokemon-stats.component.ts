@@ -15,5 +15,4 @@ export class PokemonStatsComponent {
   public faBolt: IconDefinition = faBolt;
   public faShieldAlt: IconDefinition = faShieldAlt;
   public faTachometerAlt: IconDefinition = faTachometerAlt;
-
 }

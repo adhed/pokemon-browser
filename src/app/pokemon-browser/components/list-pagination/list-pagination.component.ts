@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-import { PaginationService } from '@app/pokemon-browser/services';
-import { BehaviorSubject } from 'rxjs';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { faArrowCircleLeft, faArrowCircleRight, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { BehaviorSubject } from 'rxjs';
+import { PaginationService } from '@app/pokemon-browser/services';
 
 @Component({
   selector: 'app-list-pagination',
   templateUrl: './list-pagination.component.html',
-  styleUrls: ['./list-pagination.component.scss']
+  styleUrls: ['./list-pagination.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListPaginationComponent {
 
