@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PokemonStatsComponent } from './pokemon-stats.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('PokemonStatsComponent', () => {
   let component: PokemonStatsComponent;
@@ -8,7 +9,8 @@ describe('PokemonStatsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PokemonStatsComponent ]
+      declarations: [ PokemonStatsComponent ],
+      imports: [ FontAwesomeModule ]
     })
     .compileComponents();
   }));

@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PokemonListComponent } from './pokemon-list.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PokemonListElementComponent } from '../pokemon-list-element';
+import { ListPaginationComponent } from '../list-pagination/list-pagination.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { IconButtonComponent } from '@app/common/components/icon-button';
+import { PokemonListService, PokemonService, PaginationService } from '@app/pokemon-browser/services';
+import { ApiService, mockedApiService } from '@app/common/services';
 
 describe('PokemonListComponent', () => {
   let component: PokemonListComponent;
@@ -8,7 +15,9 @@ describe('PokemonListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PokemonListComponent ]
+      declarations: [ IconButtonComponent, PokemonListComponent, PokemonListElementComponent, ListPaginationComponent ],
+      imports: [ FontAwesomeModule, RouterTestingModule ],
+      providers: [ PokemonListService, PokemonService, { provide: ApiService, useValue: mockedApiService }, PaginationService ]
     })
     .compileComponents();
   }));

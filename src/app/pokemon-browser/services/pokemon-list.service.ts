@@ -25,7 +25,7 @@ export class PokemonListService {
     return this.pokemonService
       .getPokemonList(this.pageResultsLimit, this.currentOffset)
       .pipe(
-        map((result: PokemonListResponse) => result.results),
+        map((result: PokemonListResponse) => result ? result.results : []),
       );
   }
 }

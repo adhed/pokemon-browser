@@ -22,3 +22,8 @@ export interface PokemonListElement {
   name: string;
   url: string;
 }
+
+export interface PokemonCache {
+  [id: string]: Pokemon;
+}
+

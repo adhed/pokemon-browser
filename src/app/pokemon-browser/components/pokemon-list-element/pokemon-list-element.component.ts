@@ -11,6 +11,10 @@ export class PokemonListElementComponent {
   @Input() public pokemon: PokemonListElement;
 
   public get pokemonLink(): string[] {
+    if (!this.pokemon) {
+      return [];
+    }
+
     const urlParts = this.pokemon.url.split('/');
     const id = urlParts[urlParts.length - 2];
 
