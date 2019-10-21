@@ -4,6 +4,7 @@ import { PokemonDetailsNavComponent } from './pokemon-details-nav.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterTestingModule } from '@angular/router/testing';
 import { IconButtonComponent } from '@app/common/components/icon-button';
+import { NavigationService } from '@app/pokemon-browser/services';
 
 describe('PokemonDetailsNavComponent', () => {
   let component: PokemonDetailsNavComponent;
@@ -12,6 +13,7 @@ describe('PokemonDetailsNavComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PokemonDetailsNavComponent, IconButtonComponent ],
+      providers: [ NavigationService ],
       imports: [ FontAwesomeModule, RouterTestingModule ]
     })
     .compileComponents();
