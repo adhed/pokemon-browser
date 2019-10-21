@@ -30,4 +30,8 @@
 
 .icon-button__label {
   order: 1;
+
+  &--suffix {
+    margin-left: auto;
+  }
 }
