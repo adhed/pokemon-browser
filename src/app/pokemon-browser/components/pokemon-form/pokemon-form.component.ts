@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { NavigationService } from '@app/pokemon-browser/services';
+import { AppRoutes } from '@app/pokemon-browser/constants';
 
 @Component({
   selector: 'app-pokemon-form',
@@ -17,7 +18,7 @@ export class PokemonFormComponent {
   }
 
   constructor(
-    private readonly router: Router
+    private readonly navService: NavigationService
   ) { }
 
   public onButtonClick(event: MouseEvent): void {
@@ -25,9 +26,9 @@ export class PokemonFormComponent {
     event.stopPropagation();
 
     if (this.pokemonId.valid) {
-      this.router.navigate(['browser', 'details', this.pokemonIdValue]);
+      this.navService.navigate([AppRoutes.Browser, AppRoutes.Details, this.pokemonIdValue]);
     } else {
-      this.router.navigate(['browser']);
+      this.navService.navigate([AppRoutes.Browser]);
     }
   }
 }
